@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="heading">MILES TO KILOMETERS CONVERTER</h1>
+    <div class="input">
+        <p id="para1">Type a number of miles and convert the distance to kilometers.</p>
+        <input type="text" id="number">
+        <input type="submit" id="submit" value="Convert Distance">
+    </div>
+    <h2 id="invisible"></h2>
+
+    <script>
+        var btn = document.getElementById('submit');
+        btn.addEventListener('click',function(event){
+            var converter = parseFloat(document.getElementById('number').value);
+            event.preventDefault();
+            if(converter){
+                var a = converter*1.60934;
+                document.getElementById('invisible').innerHTML= `${a} kilometers`;
+            }
+            else{
+                document.getElementById('invisible').innerHTML= "please enter the miles";
+            }
+        });
+    </script>
+</body>
+</html>
